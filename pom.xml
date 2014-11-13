@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>br.edu.ifes.leds.ledscode.api.interface</groupId>
+    <artifactId>LEDSCodeAPIInterface</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                        <compilerArgument></compilerArgument>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    
+    <dependencies>
+        <!-- Modulos -->
+        <dependency>
+            <groupId>br.edu.leds.ledscode</groupId>
+            <artifactId>LEDSCodeMetaModel</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.edu.ifes.leds.ledscode</groupId>
+            <artifactId>LedsCodeEngine</artifactId>
+            <version>1.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>ecore</artifactId>
+            <version>2.3.0-v200706262000</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>common</artifactId>
+            <version>2.3.0-v200706262000</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.ecore</artifactId>
+            <version>2.10.1-v20140901-1043</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+            <version>2.5.0.v20100521-1846</version>
+        </dependency>
+    </dependencies>
+</project>
