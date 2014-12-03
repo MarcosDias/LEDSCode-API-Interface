@@ -7,7 +7,7 @@
 .settings/
 .idea/
 
-.iml
+*.iml
 
 #Arquivos de log do Spring Roo
 log.roo
