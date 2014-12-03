@@ -14,6 +14,12 @@ public class Controller {
     public void staticProject(){
 
         Service engine = new Service();
+        Specification projectStatic = this.montaProjeto(engine);
+
+        engine.criaProjeto(projectStatic);
+    }
+
+    public Specification montaProjeto(Service engine){
         ArrayList<String> languages = engine.getLanguages();
         ArrayList<String> frameworks = engine.getFrameworks(languages.get(0));
         ArrayList<String> database = engine.getDataBase(frameworks.get(0));
@@ -23,7 +29,7 @@ public class Controller {
         LedsCodeModelFactory factory = LedsCodeModelFactory.eINSTANCE;
 
         Specification specification = factory.createSpecification();
-        specification.setName("teste");
+        specification.setName("Projeto Estatico");
         specification.setCreatedDate(new Date());
 
         Feature features = factory.createFeature();
@@ -36,28 +42,54 @@ public class Controller {
         specification.setDescribed(features);
 
         ClassDiagram classDiagram = factory.createClassDiagram();
-        classDiagram.setName("Boliche");
+        classDiagram.setName("BolicheDiagram");
 
         specification.getHas().add(classDiagram);
 
+        // Classe Jogador
         model.Class jogador = factory.createClass();
-
-        classDiagram.getComposed().add(jogador);
-
         jogador.setName("Jogador");
         jogador.setAbstract(false);
         jogador.getStereotypeClass().add(StereotypeClass.ENTITY);
         jogador.getStereotypeClass().add(StereotypeClass.VIEW);
 
-        Attribute nome = factory.createAttribute();
-        nome.setName("nome");
+        // Atributos da class Jogador
+        Attribute nomeJogador = factory.createAttribute();
+        nomeJogador.setName("nome");
 
-        PrimitiveDataType primitiveDataType = factory.createPrimitiveDataType();
-        primitiveDataType.setType(PrimitiveData.STRING);
-        nome.setType(primitiveDataType);
+        PrimitiveDataType primitiveDataTypeNomeJogador = factory.createPrimitiveDataType();
+        primitiveDataTypeNomeJogador.setType(PrimitiveData.STRING);
+        nomeJogador.setType(primitiveDataTypeNomeJogador);
 
-        jogador.getAttributes().add(nome);
+        jogador.getAttributes().add(nomeJogador);
 
-//        engine.criaProjeto(Specification);
+        //Classe Liga
+        model.Class liga = factory.createClass();
+        liga.setName("Liga");
+        liga.setAbstract(false);
+        liga.getStereotypeClass().add(StereotypeClass.ENTITY);
+        liga.getStereotypeClass().add(StereotypeClass.VIEW);
+
+        //Atributos da classe Liga
+        Attribute nomeLiga = factory.createAttribute();
+        nomeLiga.setName("nome");
+
+        PrimitiveDataType primitiveDataTypeNomeLiga = factory.createPrimitiveDataType();
+        primitiveDataTypeNomeJogador.setType(PrimitiveData.STRING);
+        nomeLiga.setType(primitiveDataTypeNomeLiga);
+
+        Attribute jogadores = factory.createAttribute();
+        jogadores.setName("jogadores");
+        jogadores.setType(jogador);
+
+        liga.getAttributes().add(nomeLiga);
+        liga.getAttributes().add(jogadores);
+
+        //Add classes no diagrama
+        classDiagram.getComposed().add(jogador);
+        classDiagram.getComposed().add(liga);
+
+        return specification;
     }
 }
+
