@@ -15,20 +15,22 @@ public class App {
     public static void main(String[] args) throws IOException {
 
         Controller ctrl = new Controller();
-        int opcao = 0;
+        int opcao;
         System.out.println("============== LEDSCode ================\n");
         System.out.println("Menu:");
-        menu();
+        opcao = menu();
 
-        switch (opcao){
-            case 1:
-                ctrl.staticProject();
-                break;
+        do {
+            switch (opcao) {
+                case 1:
+                    ctrl.staticProject();
+                    break;
 
-            case 0:
-                finalizarApp();
-                break;
-        }
+                case 0:
+                    finalizarApp();
+                    break;
+            }
+        }while (opcao != 0);
     }
 
     /**
@@ -38,12 +40,10 @@ public class App {
     public static int menu(){
         Scanner leitor = new Scanner(System.in);
         int opcao;
-        do{
-            opcoesMenu();
-            System.out.print("Digite: ");
-            opcao = leitor.nextInt();
 
-        }while(opcao != 0);
+        opcoesMenu();
+        System.out.print("Digite: ");
+        opcao = leitor.nextInt();
 
         return opcao;
     }
