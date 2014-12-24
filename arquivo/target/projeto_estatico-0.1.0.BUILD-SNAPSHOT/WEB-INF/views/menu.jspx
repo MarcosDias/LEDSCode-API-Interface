@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_jogador" z="Q/x6f4ZJ8ZSpoDJB6jci1bcjmgc=">
+            <menu:item id="i_jogador_new" messageCode="global_menu_new" url="/jogadors?form" z="UzyXpScXaFknylp8IWLVIvs7O/A="/>
+            <menu:item id="i_jogador_list" messageCode="global_menu_list" url="/jogadors?page=1&amp;size=${empty param.size ? 10 : param.size}" z="PqYweriRb8x3sF2gcApf1KheQOo="/>
+        </menu:category>
+        <menu:category id="c_liga" z="XZF2qiPrmGEmpnXX3bZ0stLd07Q=">
+            <menu:item id="i_liga_new" messageCode="global_menu_new" url="/ligas?form" z="A1FmZT28p1LEJy/pYsdC73HM7lQ="/>
+            <menu:item id="i_liga_list" messageCode="global_menu_list" url="/ligas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="LOwMLYvWtrFG9wMjFJ+41Td4cMg="/>
+        </menu:category>
+    </menu:menu>
+</div>

@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class App {
 
     /**
-     * Main app
+     * Main view
      * @param args
      * @throws IOException
      */
@@ -30,6 +30,7 @@ public class App {
                     finalizarApp();
                     break;
             }
+            opcao = menu();
         }while (opcao != 0);
     }
 
@@ -58,9 +59,9 @@ public class App {
     }
 
     /**
-     * Metodo para finalizar app
+     * Metodo para finalizar view
      */
-    private static void finalizarApp() {
+    public static void finalizarApp() {
         System.out.println("App finalizado!!!");
     }
 }

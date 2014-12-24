@@ -1,0 +1,35 @@
+// CRIANDO O NOVO PROJETO
+project --topLevelPackage Projeto_Estatico
+
+// CONFIGURANDO O BANCO DE DADOS COM JPA
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+
+// CRIANDO AS ENTIDADES DE DOMINIO
+entity jpa --class ~.domain.Jogador --activeRecord true --testAutomatically
+field  set --fieldName nome --type ~.domain.Jogador
+
+entity jpa --class ~.domain.Liga --activeRecord true --testAutomatically
+field  set --fieldName nome --type ~.domain.Liga
+
+field  set --fieldName jogadores --type ~.domain.Liga
+
+
+// CRIANDO A PARTE WEB
+web mvc setup
+web mvc all --package ~.web
+web mvc finder all
+
+// INTERNACIONALIZACAO
+web mvc language --code de
+web mvc language --code es
+
+web mvc finder all
+
+// CRIANDO WEB SERVICE
+json all
+web mvc json all
+
+// CONFIGURACAO DO LOG
+logging setup --level INFO
+
+quit
