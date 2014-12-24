@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_projeto_estatico_domain_Liga" object="${liga}" path="/ligas" z="1LN1VvK4XPBNkz7tDAtOwXlw/R4=">
-        <field:display field="nome" id="s_projeto_estatico_domain_Liga_nome" object="${liga}" z="yNKcLUc2BGe/oI4p1oUPTCK7bKU="/>
-        <field:display field="jogadores" id="s_projeto_estatico_domain_Liga_jogadores" object="${liga}" z="UOEA/uz9B/HvS2RUWRL7YHjdiLo="/>
-    </page:show>
-</div>
