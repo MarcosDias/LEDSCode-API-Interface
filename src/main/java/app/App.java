@@ -1,7 +1,8 @@
 package app;
 
-import ctrl.Controller;
+import ctrl.APIInterfaceController;
 
+import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -14,7 +15,7 @@ public class App {
      */
     public static void main(String[] args) throws IOException {
 
-        Controller ctrl = new Controller();
+        APIInterfaceController ctrl = new APIInterfaceController();
         int opcao;
         System.out.println("============== LEDSCode ================\n");
         System.out.println("Menu:");
@@ -23,7 +24,11 @@ public class App {
         do {
             switch (opcao) {
                 case 1:
-                    ctrl.staticProject();
+                    try {
+                        ctrl.staticProject();
+                    } catch (JAXBException e) {
+                        e.printStackTrace();
+                    }
                     break;
 
                 case 0:
