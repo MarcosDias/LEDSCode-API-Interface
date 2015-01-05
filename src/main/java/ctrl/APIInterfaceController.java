@@ -21,6 +21,8 @@ public class APIInterfaceController {
         Specification specificationStaticProject = engine.createStaticProject();
 
         xmlController.escreveArquivoXMl(specificationStaticProject);
+
+        engine.acordarEngine("arquivo/" + specificationStaticProject.getName() + ".xml");
     }
 
     public APIInterfaceController(){
